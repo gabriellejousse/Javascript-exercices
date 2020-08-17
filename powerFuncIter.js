@@ -31,3 +31,4 @@ function powerFuncIter(numbase,puissance){
 };
 
 console.log(powerFuncIter(numbase,puissance)); 
+//
