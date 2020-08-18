@@ -1,53 +1,30 @@
 
-// function letterCapitalize(sentence){
-
-//     var arr= sentence.split(" ");
-// console.log(arr);
-
-//     var part1= sentence.substr(0,1);
-//     var part2= sentence.substr(6,1);
-//     var part3= sentence.substr(11,1);
-// console.log(part1, part2, part3);
-
-//     var maj1= part1.toUpperCase();
-//     var maj2= part2.toUpperCase();
-//     var maj3= part3.toUpperCase();
-// console.log(maj1, maj2, maj3);
-    
-
-
-// };
-
-console.log(letterCapitalize("bring your umbrella"));
-
-
 
 function letterCapitalize(sentence){
+    var tableauSentence = sentence.split(" ");
+    var result = [];
+    var firstMaj = '';
+    var restOfLetters = '';
 
-    var arr = sentence.split(" ");
-    console.log("arr:");
-    console.log(arr);
+    for(var i = 0; i <= tableauSentence.length - 1; i++){
+        // console.log(tableauSentence[i]);
 
-    console.log("arr length");
-    console.log(arr.length)
-    
-    // console.log("arr[0]");
-    // console.log(arr[0])
-    // console.log("arr[1]");
-    // console.log(arr[1])
-    // console.log("arr[2]");
-    // console.log(arr[2])
-    
-    for ( var i = 0; i < arr.length; i++){ //leandro
-        sentence.substr();
-        console.log("i")
-        console.log(i)
-        console.log("arr[i]");
-        console.log(arr[i]);
+        var firstMaj = tableauSentence[i].substr(0,1).toUpperCase();
+        // console.log(firstMaj);
+        // affiche B Y U pareil que ligne au-dessus (mais on a attribué ces lettres a la var firstMaj)
+        // pr les manipuler plus facilement
+
+        var restOfLetters = tableauSentence[i].substr(1, tableauSentence[i].length);
+        //console.log(restOfLetters);
+        // affiche ring our mbrella (mots sans les premières lettres
+
+        result.push(firstMaj + restOfLetters);
+        // on veut push Bring Your Umbrella dans un tableau 
+        // .push sert à ajouter une ou des valeurs dans un tableau
     }
-
-    return 'my return';
-
+    return result.join(' ');
+    // transforme le tableau tableauSentence en string
 }
-// i = i + 1
-// i++
+console.log(letterCapitalize('bring your umbrella'));
+
+//ok

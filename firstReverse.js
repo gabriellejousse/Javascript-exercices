@@ -1,15 +1,10 @@
-
-
-
-var str;
-
 function firstReverse(str){
-var tableau = Array.from(str);
-console.log(tableau);
-var reversetab = tableau.reverse();
-console.log(reversetab);
-var tabToStr = reversetab.join('');
-console.log(tabToStr);
-
+    var result = '';
+    for(var i = str.length; i >= 0; i --){
+        result = result + str.charAt(i);
+    }
+    return result;
 };
-console.log(firstReverse("Gabrielle développeuse web"));
+console.log(firstReverse('hello'));
+
+// OK

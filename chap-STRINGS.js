@@ -14,6 +14,9 @@ for (var i = 0; i < sentence.length; i++){
     // u ....
 }
 
+
+
+
 /* CHAR AT */
 
 console.log("essai2");
@@ -24,6 +27,9 @@ console.log(sentence.charAt(1));
 
 var trait = '-------------';
 console.log('-------------');
+
+
+
 
 /* ARRAY FROM ET SPLIT */
 
@@ -40,6 +46,10 @@ var phrase2 = phrase.split(" ");
 console.log( phrase2[2]);
     // j'affiche la partie qui a l'index 2 (position 2) dans ce tableau (ici, "is")
 
+
+
+
+
 /* INDEX OF */
 
 console.log( phrase.indexOf("llo") ); 
@@ -51,6 +61,10 @@ console.log( phrase.indexOf("llo") );
 var trait = '-------------';
 console.log('-------------');
 
+
+
+
+
 /* START WITH - END WITH */
 
 var song = "singing in the rain";
@@ -60,6 +74,9 @@ console.log(song.startsWith("s"));
 console.log(song.endsWith("67")); 
 console.log(song.endsWith("N"));
 // la string ne finissant pas par "67", ni par "N" (mais "n") la console affichera "false"
+
+
+
 
 
 /* TO LOWER/UPPER CASE */
