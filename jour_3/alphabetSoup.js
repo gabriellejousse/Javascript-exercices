@@ -1,19 +1,28 @@
 var str;
-function alphabetSoupSort(str){
-    var tableau = str.split("");            //transfo de la string en tableau lettre par lettre ["g","a","b"...]
-    var result= [];
-   
-
-    for (i = 0 ; i < tableau.length; i++){
-
-        console.log(str.charCodeAt(i));
-        // on transforme chaque lettre de la str en code ASCII à chaque tour de boucle
-        // maintenant on doit les classer par ordre croissant
-
-
+function alphabetSoup(str){
+    var tableauStr = str.split("");
+    console.log(tableauStr)
+    // on a transformé la string en tableau
+    for(var i = 0; i<=tableauStr.length; i++ ){     //on fait une boucle pour pouvoir parcourir le tableau char par char
+        console.log(str[i]);
+        //affiche:
+        //h
+        //e ...
+        //console.log(str[i] < str[i+1]);
+        
+        if(str[i] < str[i+1]){         //si l'index x(str[i]) est inférieur à l'index suivant (str[i]+1), alors...
+            var swap = str[i];
+            str[i] = str[i+1];
+            str[i+1] = swap;
+            // après ça, si str[i] est plus grand que l'index suivant(str[i+1]), alors :
+            // str[i] et str[i+1] doivent swap (échanger)
+        }
     }
-return result
+    return tableauStr[str[i] < str[i+1]];
 }
-console.log(alphabetSoupSort("hello"));
-//
+console.log(alphabetSoup("hello"));
 
+//swap de str[i] et str[i+1]:
+// var swap = str[i];
+// str[i] = str[i+1];
+// str[i+1] = swap;
