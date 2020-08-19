@@ -10,7 +10,7 @@ function alphabetSoup(str){
         //e ...
         //console.log(str[i] < str[i+1]);
         
-        if(str[i] < str[i+1]){         //si l'index x(str[i]) est inférieur à l'index suivant (str[i]+1), alors...
+        if(str[i] < str[i+1]){         // si l'index x(str[i]) est inférieur à l'index suivant (str[i]+1), alors...
             var swap = str[i];
             str[i] = str[i+1];
             str[i+1] = swap;
@@ -18,7 +18,7 @@ function alphabetSoup(str){
             // str[i] et str[i+1] doivent swap (échanger)
         }
     }
-    return tableauStr[str[i] < str[i+1]];
+    return ;
 }
 console.log(alphabetSoup("hello"));
 

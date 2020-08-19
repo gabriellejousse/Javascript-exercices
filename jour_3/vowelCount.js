@@ -25,3 +25,4 @@ function vowelCount(str){
 console.log(vowelCount("bonjour tout le monde"));
 
 // OK
+// a tester avec .includes
