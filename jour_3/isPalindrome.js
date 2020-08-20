@@ -1,16 +1,16 @@
-function isPalindrome(str){
-var str;
-var strReverse = "";
+function isPalindrome(str) {
+    var str;
+    var strReverse = "";
 
-    for(var i = str.length; i >= 0; i --){
+    for (var i = str.length; i >= 0; i--) {
         strReverse = strReverse + str.charAt(i);
-    // on a bien le str à l'envers 
+        // on a bien le str à l'envers 
     }
 
 
-    if(str === strReverse){
+    if (str === strReverse) {
         return "true";
-    } else{
+    } else {
         return "false";
     };
 
