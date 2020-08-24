@@ -14,5 +14,7 @@ function secondGreatLow(arr) {
 
     return [scndSmaller, scndGreater] ;
 }
-console.log(secondGreatLow([3, 4, 6, 23, 42, 51, 65, 72, 90]));
-console.log(secondGreatLow([2, 6, 33, 49]));
+console.log(secondGreatLow( [3, 4, 6, 23, 42, 51, 65, 72, 90] ));
+console.log(secondGreatLow( [2, 6, 33, 49] ));
+
+//ok
