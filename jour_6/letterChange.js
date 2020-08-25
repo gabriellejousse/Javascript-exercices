@@ -13,8 +13,9 @@ function letterChange(str) {
 
     var strModified = '';
     var vowelList = 'aeiouyAEIOUY';
+    var result = '';
 
-    for (i = 0; i < str.length; i++) {
+    for (var i = 0; i < str.length; i++) {
         var strAscii = str.charCodeAt(i);
 
         if ((strAscii >= 65 && strAscii <= 89) || (strAscii >= 97 && strAscii <= 121)) {
@@ -29,15 +30,15 @@ function letterChange(str) {
             strModified += String.fromCharCode(strAscii);
         }
     }
-    
-    for (j = 0; j < strModified.length; i++) {
-        if (vowelList.indexOf(strModified[j]) !== -1){
-            var maj = strModified[j].toUpperCase();
+
+    for (var j = 0; j < strModified.length; j++) {          // explorer str caractère par caractère
+
+        if (vowelList.includes(strModified[j])) {               
+            strModified[j].replace(/(['e'])/gi, strModified.toUpperCase())
+            console.log('oui');        
         }
     }
-
-
-    return 'return';
+    return strModified;
 
 }
 

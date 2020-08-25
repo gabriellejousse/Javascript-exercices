@@ -1,43 +1,30 @@
+var nb1 = parseInt(process.argv[2])
+var nb2 = parseInt(process.argv[4]);
+var op = process.argv[3];
 
 
-// ADDITION :
-
-function doop1(arg1, arg2) {
-
-    var adding = parseInt(process.argv[2]) + parseInt(process.argv[3]);
-    return adding;
-
+if (process.argv.length !== 5) {
+    // Si la taille de process.argv n'est pas égale à 5 (5 arguments : 1)node 2)fichier.js 3)nb1 4)op 5)nb2), alors retourner 'error'
+    console.log('error');
+    return;
 }
-console.log(doop1(process.argv[2], process.argv[3]))
 
 
-
-// MULTIPLICATION : 
-
-var arg1 = process.argv[2];
-var arg2 = process.argv[3];
-// pas obligé de déclarer 
-
-function doop2(arg1, arg2) {
-
-    var multiply = parseInt(arg1) * parseInt(arg2);
-
-    return multiply;
+if (op === '+') {
+    result = nb1 + nb2;
+} else if (op === '-') {
+    result = nb1 - nb2;
+} else if (op === '*') {
+    result = nb1 * nb2;
+} else if (op === '/') {
+    result = nb1 / nb2;
+} else if (op === '%') {
+    result = nb1 % nb2;
+} else {
+    console.log('aucune operations trouvé')
 }
-console.log(doop2(arg1, arg2));
 
+console.log(result)
 
-
-// SOUSTRACTION : 
-
-function doop3(arg1, arg2) {
-
-    var sub = parseInt(arg1) - parseInt(arg2);
-
-    return sub;
-}
-console.log(doop3(arg1, arg2));
-
-
-
-// OK
+// attention, pour exécuter une multiplication dans la console directement, mettre '*' entre guillemets/apostrophes
+// sinon ça ne marchera pas
