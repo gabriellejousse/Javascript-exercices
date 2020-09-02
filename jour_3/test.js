@@ -1,23 +1,9 @@
-
-function isPalindrome(str) {
-    var str;
-    var strReverse = [];
-    var tabStr = str.split("");
-    
-    for (var i = tabStr.length; i >= 0; i--) {
-        strReverse = strReverse + tabStr.indexOf(i);
-
-    }
-
-
-    if (tabStr === strReverse) {
-        return "true";
-    } else {
-        return "false";
-    };
-
-
+var obj = {
+    type : [1, 2, 3],
+    name : 'gab'
 }
-console.log(isPalindrome("kayak"));
 
-// OK sauf sur le "never odd or even"
+console.log(obj['name']);
+console.log(obj.type);
+
+console.log(obj.type[1]);

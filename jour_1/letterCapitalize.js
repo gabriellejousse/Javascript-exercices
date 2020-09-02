@@ -4,7 +4,7 @@ function letterCapitalize(sentence){
     var tableauSentence = sentence.split(" ");
     var result = [];
     var firstMaj = '';
-    var restOfLetters = '';
+    var restOfLetters = strArray.substr();
 
     for(var i = 0; i <= tableauSentence.length - 1; i++){
         // console.log(tableauSentence[i]);
@@ -16,7 +16,7 @@ function letterCapitalize(sentence){
 
         var restOfLetters = tableauSentence[i].substr(1, tableauSentence[i].length);
         //console.log(restOfLetters);
-        // affiche ring our mbrella (mots sans les premières lettres
+        // affiche ring our mbrella (mots sans les premières lettres)
 
         result.push(firstMaj + restOfLetters);
         // on veut push Bring Your Umbrella dans un tableau 

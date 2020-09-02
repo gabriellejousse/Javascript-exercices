@@ -34,3 +34,5 @@ function exOh(str) {
 };
 
 console.log(exOh('xoxoxo'));
+
+module.exports = ['coucou', 290, true];
