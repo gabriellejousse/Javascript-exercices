@@ -1,2 +1,7 @@
-Nom: Jean Guo 
-Adresse Email: jean.guo@konexio.eu
+[{
+    "name": "Jean Guo",
+    "email": "jean.guo@konexio.eu"
+}, {
+    "name": "Binta Jammeh",
+    "email": "binta.jammeh@konexio.eu"
+}]

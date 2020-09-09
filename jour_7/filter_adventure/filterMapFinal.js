@@ -30,7 +30,7 @@ var arr = [{
     tags: ['fashion-week', 'fashion-geek', 'tech']
 }];
 
-var newArrTech = [];
+
 
 var arr2 = arr.filter(function (elem) {
 
@@ -40,22 +40,22 @@ var arr2 = arr.filter(function (elem) {
         console.log(elem['tags'][i]);
 
         if (elem['tags'][i] == 'tech') {
-            newArrTech.push(elem);
-            // affiche bien uniquement les articles qui ont le tag 'tech':
-            console.log(newArrTech);
+            console.log('tech!!')
+            return true;
         }
     }
 
-    return; // ??
+    return false;
 
 });
 console.log(arr2);
 
 
-/* var arr3 = arr.map(function(elem){
+var arr3 = arr2.map(function(elem){
 
-    return 'return';
+    return elem['title'];
 
 });
 console.log(arr3);
- */
+
+// OK

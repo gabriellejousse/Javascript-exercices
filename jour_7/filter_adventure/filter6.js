@@ -16,6 +16,7 @@ var arr2 = arr.filter(function(elem){
 
     // retourne uniquement les objets (elem) dont le 'firstName' commence par 'D'
     // on sélectionne les premières lettres de chaque 'firstName' avec .substr(0,1)
+    console.log(elem['firstName'].substr(0,1) == 'D')
     return elem['firstName'].substr(0,1) == 'D';  
 
 });
