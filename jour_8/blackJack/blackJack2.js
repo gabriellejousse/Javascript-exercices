@@ -32,7 +32,9 @@ var scorePlayer = 0;
 
 var minCard = 1;
 var maxCard = 11;
-var card = Math.floor(Math.random() * (maxCard - minCard + 1)) + minCard;
+// on ne doit pas déclarer la variable card en dehors de la fonction,
+// on la déclarera uniquement aux endroits où on en a besoin dans la fonction
+// var card = Math.floor(Math.random() * (maxCard - minCard + 1)) + minCard;
 
 var minBank = 16;
 var maxBank = 21;
@@ -40,65 +42,63 @@ var bank = Math.floor(Math.random() * (maxBank - minBank + 1)) + minBank;
 console.log(bank)
 
 function displayPrompt() {
-    prompt.get({name : 'q', description :'Card ? type yes or y for a new card'}, function (err, result) {
+    prompt.get({name : 'question', description :'Card ? type yes or y for a new card'}, function (err, result) {
 
         // si le joueur écrit 'yes' ou 'y', on entre dans ces conditions : 
-        if (result['q'] === 'yes' || result['q'] === 'y') {
+        if (result.question === 'yes' || result.question === 'y') {
+            var card = Math.floor(Math.random() * (maxCard - minCard + 1)) + minCard;
+            scorePlayer += card;
+            console.log('random card : ' + card);
+            console.log('Your score is : ' + scorePlayer + ', bank is ' + bank);
 
-            console.log('random card score is : ' + card);
-            console.log('new scorePlayer : ' + (scorePlayer += card))
-            //console.log('Your score is ' + (scorePlayer += card));
-            //console.log('card : '+ (scorePlayer += card))
 
             // si le score du joueur est > 21 -> le joueur perd et la fonction s'arrête :
             if (scorePlayer > 21) {
-                console.log('You lose, the bank had ' + bank)
+                console.log('You lose, the bank had ' + bank);
                 // return -> pour sortir de la fonction quand le joueur perd :
                 return;
 
                 // si le score du joueur est < 21 -> on repropose de tirer une carte aléatoire et donnera les résultats selon les conditions suivantes:
             } else if (scorePlayer < 21) {
-                displayPrompt();
-                card = Math.floor(Math.random() * (maxCard - minCard + 1)) + minCard;
-                console.log('new random card : ' + card)
-                console.log('Your score is ' + (scorePlayer + card));
-
-                // si la nouvelle carte aléatoire + le nouveau score sont = à 21 -> blackjack !
-                if ((scorePlayer + card) === 21) {
-                    console.log('Blackjack ! You beat the bank');
-                    return;
 
                 // si la nouvelle carte aléatoire + le nouveau score sont supérieurs à la bank et inférieurs à 21 -> le joueur gagne
-                } else if (((scorePlayer + card) > bank) && ((scorePlayer + card) < 21)) {
+                if ((scorePlayer > bank) && (scorePlayer < 21)) {
                     console.log('The bank had : ' + bank + ' You beat the bank! You win.');
                     return;
 
                 // si la nouvelle carte aléatoire + le nouveau score sont supérieurs à 21 -> le joueur perd
-                } else if ((scorePlayer + card) > 21) {
+                } else if (scorePlayer > 21) {
                     console.log('You lose, the bank had ' + bank);
                     return;
                 }
-            }
-
-        // si on entre 'no' : on  affiche le score, et le résultat (gagné ou perdu):
-        } else if (result['q'] === 'no') {
-
-            if (((scorePlayer + card) > bank) && ((scorePlayer + card) < 21)) {
-                console.log('The bank had : ' + bank + ' You beat the bank! You win.');
-                return;
-            } else if ((scorePlayer + card) < bank) {
-                console.log('You lose, the bank had ' + bank)
-            } else if ((scorePlayer + card) === 21) {
+             // si la nouvelle carte aléatoire + le nouveau score sont = à 21 -> blackjack !
+            } else if(scorePlayer === 21) {
                 console.log('Blackjack ! You beat the bank');
                 return;
-            } else if (((scorePlayer + card) > bank) && ((scorePlayer + card) > 21)) {
+            }
+                displayPrompt();
+
+        // si on entre 'no' : on  affiche le score, et le résultat (gagné ou perdu):
+        } else if (result.question === 'no') {
+
+            if ((scorePlayer > bank) && (scorePlayer < 21)) {
+                console.log('The bank had : ' + bank + ' You beat the bank! You win.');
+                return;
+            } else if (scorePlayer  < bank) {
+                console.log('You lose, the bank had ' + bank)
+            } else if (scorePlayer === 21) {
+                console.log('Blackjack ! You beat the bank');
+                return;
+            } else if ((scorePlayer  > bank) && (scorePlayer > 21)) {
                 console.log('You lose, the bank had ' + bank);
                 return;
             }
-        
         }
-        
+       
     }
     )
 };
 displayPrompt();
+
+
+// OK

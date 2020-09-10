@@ -6,7 +6,7 @@ request.get('https://restcountries.eu/rest/v1/all', function (error, response, b
   // console.log('body:', body); // Print the HTML for the url link
 
 
-  // sert à convertir le body (ttes les infos du site) en objet (string devient -> objet)
+  // sert à convertir les infos du site en objet (string devient -> objet)
   // on pourra donc utiliser les propriétés de l'objet  (pas possible si le body reste en string):
   var arrJson = JSON.parse(body)
   //console.log(arrJson)
@@ -21,15 +21,4 @@ request.get('https://restcountries.eu/rest/v1/all', function (error, response, b
 
 });
 
-
-/* var request = require("request")
-
-console.log('#1');
-request.get('https://restcountries.eu/rest/v1/all', function (err, res, body) {
-    console.log('#2');
-
-    var result = JSON.parse(body);
-    console.log('name', result[0].name);
-    console.log('capital', result[0].capital);
-});
-console.log('#3'); */
+// OK
