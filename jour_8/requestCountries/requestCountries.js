@@ -15,7 +15,7 @@ request.get('https://restcountries.eu/rest/v1/all', function (error, response, b
   // parcourir tout arrJson et afficher uniquement les keys "name", séparées par des tirets:
   for (var i = 0; i < arrJson.length - 1; i++) {
     //console.log(arrJson[i])
-    var result = arrJson[i]["name"] + " - " + arrJson[i + 1]["name"];
+    var result = arrJson[i]["name"] + " \n - ";
     console.log(result)
   }
 
